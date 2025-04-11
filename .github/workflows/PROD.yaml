@@ -21,4 +21,4 @@ jobs:
         with :
           # cloudbees-url: "https://api.cloudbees.io"
           cloudbees-pat: ${{ secrets.PROD_PAT }}
-          # content: "Test Prod"
+          content: "Test Prod"
