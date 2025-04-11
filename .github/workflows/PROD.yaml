@@ -10,15 +10,13 @@ jobs:
       - name : Step-1
         run: echo "hello from step 1"
         
-      - uses: actions/checkout@v3
-
-      - name: Set up environment variable for PAT
-        run: echo "MY_PAT=${{ secrets.MY_PAT }}"
+      - name: Checkout
+        uses: actions/checkout@v3
 
       - name: Publish Evidence Action
         uses: cloudbees-gha-cbp/publish-evidence-item@test
-        id: go-action
+        id: GHA-action
         with :
           # cloudbees-url: "https://api.cloudbees.io"
           cloudbees-pat: ${{ secrets.PROD_PAT }}
-          content: "Test Prod"
+          content: "Test:Prod"
