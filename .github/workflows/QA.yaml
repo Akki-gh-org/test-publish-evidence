@@ -1,7 +1,7 @@
 name: Publish evidence item
 on:
   push:
-   branches: [ main ]
+   branches: [ QA ]
 
 jobs:
   build:
@@ -13,14 +13,12 @@ jobs:
       - uses: actions/checkout@v3
 
       - name: Set up environment variable for PAT
-        run: echo "MY_PAT=${{ secrets.MY_PAT }}"
+        run: echo "MY_PAT=${{ secrets.QA_PAT }}"
 
       - name: Publish Evidence Action
         uses: cloudbees-gha-cbp/publish-evidence-item@test
-        # uses: akashsami4456/gha-action@main
         id: go-action
         with :
-          # cloudbees-url: "https://api.saas-preprod.beescloud.com/"
-          cloudbees-url: "https://api.cloudbees.io"
-          cloudbees-pat: ${{ secrets.PROD_PAT }}
+          cloudbees-url: "https://api.saas-qa.beescloud.com/"
+          cloudbees-pat: ${{ secrets.QA_PAT }}
           content: "Test Prod"
