@@ -16,9 +16,9 @@ jobs:
         run: echo "MY_PAT=${{ secrets.QA_PAT }}"
 
       - name: Publish Evidence Action
-        uses: cloudbees-gha-cbp/publish-evidence-item@test
+        uses: cloudbees-io-gha/publish-evidence-item@v1
         id: go-action
         with :
           cloudbees-url: "https://api.saas-qa.beescloud.com/"
           cloudbees-pat: ${{ secrets.QA_PAT }}
-          # content: "Test Prod"
+          content: "Test QA evidence"
