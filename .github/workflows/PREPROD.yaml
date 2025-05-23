@@ -16,7 +16,7 @@ jobs:
         run: echo "MY_PAT=${{ secrets.PREPROD_PAT }}"
 
       - name: Publish Evidence Action
-        uses: cloudbees-gha-cbp/publish-evidence-item@test
+        uses: cloudbees-gha-cbp/publish-evidence-item@v1
         id: go-action
         with :
           cloudbees-url: "https://api.saas-preprod.beescloud.com/"
