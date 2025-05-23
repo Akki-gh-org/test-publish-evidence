@@ -6,19 +6,19 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    permissions:
+      id-token: write
+      contents: read
     steps:
       - name : Step-1
         run: echo "hello from step 1"
         
       - uses: actions/checkout@v3
 
-      - name: Set up environment variable for PAT
-        run: echo "MY_PAT=${{ secrets.QA_PAT }}"
-
       - name: Publish Evidence Action
-        uses: cloudbees-io-gha/publish-evidence-item@v1
+        uses: cloudbees-io-gha/publish-evidence-item@CBP-14461
         id: go-action
         with :
           cloudbees-url: "https://api.saas-qa.beescloud.com/"
-          cloudbees-pat: ${{ secrets.QA_PAT }}
-          content: "Test QA evidence"
+          # cloudbees-pat: ${{ secrets.QA_PAT }}
+          content: "Test QA evidence-OIDC"
