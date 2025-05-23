@@ -34,7 +34,7 @@ jobs:
           # The CloudBees platform personal access token.
           # cloudbees-pat: ${{ secrets.PROD_PAT }}
           # The content to be published as evidence.
-          content: "Evidence : PROD-AK"
+          content: "Evidence : PROD-OIDC"
           # The format of the evidence content.
           # format: # optional
 
