@@ -16,23 +16,10 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
 
-      # - name: Publish Evidence Action
-      #   uses: cloudbees-gha-cbp/publish-evidence-item@v2
-      #   id: GHA-action
-      #   with :
-      #     # cloudbees-url: "https://api.cloudbees.io"
-      #     cloudbees-pat: ${{ secrets.PROD_PAT }}
-      #     content: "Evidence : Demo"
-
       - name: Publish evidence to Platform
         # You may pin to the exact commit or the version.
         uses: cloudbees-io-gha/publish-evidence-item@v2
         with:
-          # The CloudBees platform URL.
-          # cloudbees-url: # optional, default is https://api.cloudbees.io
-          # The CloudBees platform personal access token.
-          # cloudbees-pat: ${{ secrets.PROD_PAT }}
-          # The content to be published as evidence.
           content: "Evidence : PROD-Validation-test"
           # The format of the evidence content.
           # format: # optional
