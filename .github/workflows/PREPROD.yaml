@@ -19,5 +19,5 @@ jobs:
         uses: cloudbees-gha-cbp/publish-evidence-item@v2
         id: go-action
         with :
-          # cloudbees-url: "https://api.saas-preprod.beescloud.com/"
+          cloudbees-url: "https://api.saas-preprod.beescloud.com/"
           content: "Test PreProd- OIDC"
